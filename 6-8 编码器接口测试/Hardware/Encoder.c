@@ -37,3 +37,22 @@ void Encoder_Init(void)
 	
 	
 }
+
+int16_t Encoder_Get(void)
+{
+	int16_t Temp;
+	Temp = TIM_GetCounter(TIM3);
+	TIM_SetCounter(TIM3, 0);
+	return Temp;
+}
+
+
+
+
+
+
+
+
+
+
+

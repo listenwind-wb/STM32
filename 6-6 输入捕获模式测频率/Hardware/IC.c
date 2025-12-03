@@ -30,7 +30,6 @@ void IC_Init()
 	TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
 	
 	TIM_ICInit(TIM3, &TIM_ICInitStructure);
-	
 	TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1);
 	TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);
 	

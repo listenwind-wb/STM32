@@ -1,6 +1,6 @@
 #include "stm32f10x.h"                  // Device header
 
-extern uint16_t Num;
+//extern uint16_t Num;
 
 void Timer_Init(void)
 {
@@ -33,14 +33,14 @@ void Timer_Init(void)
 
 }
 
-void TIM2_IRQHandler(void)
-{
-	if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET)
-	{
-		Num++;
-		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-	}
-}
+//void TIM2_IRQHandler(void)
+//{
+//	if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET)
+//	{
+//		Num++;
+//		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+//	}
+//}
 		
 
 
