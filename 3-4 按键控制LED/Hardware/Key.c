@@ -21,10 +21,10 @@ uint8_t Key_GetNum(void)
 	    Delay_ms(20);
 		KeyNum = 1;
 	}
-	if (GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11) == 0)
+	if (GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_2) == 0)
 	{
 		Delay_ms(20);
-		while (GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11) == 0);
+		while (GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_2) == 0);
 	    Delay_ms(20);
 		KeyNum = 2;
 	}
