@@ -28,3 +28,4 @@
 .\objects\countsensor.o: .\Libary\stm32f10x_usart.h
 .\objects\countsensor.o: .\Libary\stm32f10x_wwdg.h
 .\objects\countsensor.o: .\Libary\misc.h
+.\objects\countsensor.o: .\System\Delay.h

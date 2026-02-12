@@ -17,7 +17,6 @@ int main(void)
 		else
 		{
 			Buzzer_OFF();
-			
 		}
 	}
 }

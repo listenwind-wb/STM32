@@ -1,4 +1,5 @@
 #include "stm32f10x.h"                  // Device header
+#include "Delay.h"
 
 uint16_t CountSensor_Count;
 
@@ -20,11 +21,13 @@ void CountSensor_Init(void) {
     EXTI_InitStructure.EXTI_Line = EXTI_Line14;
     EXTI_InitStructure.EXTI_LineCmd = ENABLE;
     EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;    // 中断模式（非事件模式）
-    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;// 触发（NPN传感器匹配）
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;// 双边沿触发
     EXTI_Init(&EXTI_InitStructure);
     
     // NVIC配置（优先级分组2，抢占1，子优先级1，无问题）
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+	
+	
     NVIC_InitTypeDef NVIC_InitStructure;
     NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;   // B14属于EXTI15_10中断通道
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -44,7 +47,7 @@ void EXTI15_10_IRQHandler(void) {
         // 2. 短延时消抖（关键：过滤引脚抖动，10ms足够，无需400ms）
         Delay_ms(10);
         // 3. 二次确认引脚电平
-        if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 1 || GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 0 ) {
+        if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 0 || GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_14) == 1 ) {
             CountSensor_Count++;  // 仅真触发时计数
         }
         // 4. 清除中断标志（必须做，否则会重复进入中断）

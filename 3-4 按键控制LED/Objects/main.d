@@ -28,6 +28,5 @@
 .\objects\main.o: .\Libary\stm32f10x_usart.h
 .\objects\main.o: .\Libary\stm32f10x_wwdg.h
 .\objects\main.o: .\Libary\misc.h
-.\objects\main.o: .\System\Delay.h
 .\objects\main.o: .\Hardware\LED.h
 .\objects\main.o: .\Hardware\Key.h
