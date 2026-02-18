@@ -27,9 +27,9 @@ void IC_Init()
 	TIM_ICInitStructure.TIM_ICFilter = 0xF;
 	TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;
 	TIM_ICInitStructure.TIM_ICPrescaler = TIM_ICPSC_DIV1;
-	TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
-	
+	TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;	
 	TIM_ICInit(TIM3, &TIM_ICInitStructure);
+	
 	TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1);
 	TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);
 	

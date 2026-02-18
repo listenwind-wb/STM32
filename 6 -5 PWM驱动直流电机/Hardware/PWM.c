@@ -34,9 +34,7 @@ void PWM_Init()
 	TIM_OC3Init(TIM2, &TIM_OCInitstructure);
 
 	TIM_Cmd(TIM2, ENABLE);
-	
-	
-	
+
 }
 
 void PWM_SetCompare3(uint16_t Compare)

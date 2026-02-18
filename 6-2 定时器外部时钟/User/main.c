@@ -18,7 +18,6 @@ int main(void)
 		OLED_ShowNum(1, 5 , Num, 5);
 		OLED_ShowNum(2, 5 , Timer_GetCounter(), 5);
 		
-
-			
 	}
+	
 }

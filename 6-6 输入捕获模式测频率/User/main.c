@@ -13,7 +13,7 @@ int main(void)
 	
 	OLED_ShowString(1, 1, "Freq:00000Hz");
 	
-	PWM_SetPrescaler(720 - 1);    //Freq = 72M / (PSC + 1) / 100
+	PWM_SetPrescaler(7200 - 1);    //Freq = 72M / (PSC + 1) / 100
 	PWM_SetCompare1(50);          //Duty = CCR / 100
 	
 
