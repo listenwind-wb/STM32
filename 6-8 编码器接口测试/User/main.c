@@ -16,9 +16,7 @@ int main(void)
 
 	while (1)
 	{
-		OLED_ShowSignedNum(1, 7, Speed, 5);
-
-			
+		OLED_ShowSignedNum(1, 7, Speed, 5);	
 	}
 }
 
@@ -30,4 +28,5 @@ void TIM2_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 	}
 }
-		
+
+
