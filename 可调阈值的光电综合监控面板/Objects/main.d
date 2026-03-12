@@ -29,4 +29,7 @@
 .\objects\main.o: .\Libary\stm32f10x_wwdg.h
 .\objects\main.o: .\Libary\misc.h
 .\objects\main.o: .\System\Delay.h
+.\objects\main.o: .\Hardware\PWM.h
+.\objects\main.o: .\Hardware\AD.h
+.\objects\main.o: .\Hardware\Encoder.h
 .\objects\main.o: .\Hardware\OLED.h
