@@ -4,7 +4,7 @@
 #include "AD.h"
 #include "Encoder.h"
 #include "OLED.h"
-
+#include "Buzzer.h"
 
 
 int main(void)
@@ -13,21 +13,38 @@ int main(void)
 	AD_Init();
 	Encoder_Init();
 	OLED_Init();
+	Buzzer_Init();
 	
 	uint16_t Light;
-	int16_t Count;
+	int16_t CT;
 	
-	Count = Encoder_Get();
-
-
 	while (1)
 	{		
-		Count = Encoder_Get();
+		CT = Encoder_Get();
 		Light = AD_Getvalue() / 4095.0 * 100 ;
 		Delay_ms(100);
-		OLED_ShowNum(1, 1, Light, 3);
-		PWM_SetCompare1(Light);
-		OLED_ShowSignedNum(2, 1, Count, 4);
+		
+		OLED_ShowNum(1, 1, Light, 3);		
+		OLED_ShowSignedNum(2, 1, CT, 4);
+		
+		int32_t Light_val = (int32_t)Light;
+		int32_t CT_val = (int32_t)CT;
+		
+		if (Light_val > CT_val)
+		{
+			Buzzer_ON();
+			PWM_SetCompare1(0);
+			Delay_ms(100);
+			PWM_SetCompare1(100);
+			Delay_ms(100);
+			
+		}
+		else
+		{
+			Buzzer_OFF();
+			PWM_SetCompare1(Light);
+		}
+
 	
 	}
 	

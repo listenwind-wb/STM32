@@ -33,3 +33,4 @@
 .\objects\main.o: .\Hardware\AD.h
 .\objects\main.o: .\Hardware\Encoder.h
 .\objects\main.o: .\Hardware\OLED.h
+.\objects\main.o: .\Hardware\Buzzer.h
