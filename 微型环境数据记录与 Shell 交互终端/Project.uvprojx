@@ -671,6 +671,16 @@
               <FileType>5</FileType>
               <FilePath>.\System\MyRTC.h</FilePath>
             </File>
+            <File>
+              <FileName>MySPI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\MySPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>MySPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\System\MySPI.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -735,6 +745,21 @@
               <FileName>MPU6050_Reg.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\MPU6050_Reg.h</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q64.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\W25Q64.c</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q64.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\W25Q64.h</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q64_Ins.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\W25Q64_Ins.h</FilePath>
             </File>
           </Files>
         </Group>

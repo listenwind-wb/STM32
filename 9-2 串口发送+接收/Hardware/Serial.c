@@ -43,7 +43,6 @@ void Serial_Init(void)
 	
 	USART_Cmd(USART1, ENABLE);
 	
-
 }
 
 void Serial_SendByte(uint8_t Byte)
@@ -129,8 +128,6 @@ void USART1_IRQHandler(void)
 		Serial_RXFlag = 1;
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 	}
-
-
 }
 
 

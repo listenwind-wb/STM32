@@ -23,8 +23,6 @@ void Serial_Init(void)
 	USART_Init(USART1, &USART_InitStructure);
 	
 	USART_Cmd(USART1, ENABLE);
-	
-
 }
 
 void Serial_SendByte(uint8_t Byte)
