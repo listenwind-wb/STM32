@@ -43,8 +43,6 @@ void Serial_Init(void)
 	NVIC_Init(&NVIC_InitStructure);
 	
 	USART_Cmd(USART1, ENABLE);
-	
-
 }
 
 void Serial_SendByte(uint8_t Byte)
