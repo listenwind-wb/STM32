@@ -34,6 +34,7 @@
 ".\objects\ad.o"
 ".\objects\mpu6050.o"
 ".\objects\w25q64.o"
+".\objects\serial.o"
 ".\objects\main.o"
 ".\objects\stm32f10x_it.o"
 --strict --scatter ".\Objects\Project.sct"
